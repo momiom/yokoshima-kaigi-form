@@ -13,6 +13,7 @@ const inter = Inter({
 const dot = localFont({
   src: './fonts/BestTen-CRT.otf',
   variable: '--font-dot',
+  display: 'block',
 })
 
 export const metadata = {
@@ -29,7 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       >
         <GoogleAnalytics />
         <LogoHeader />
-        <div className="px-4">{children}</div>
+        <div className="mt-4 px-5">{children}</div>
       </body>
     </html>
   )

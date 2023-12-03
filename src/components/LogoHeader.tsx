@@ -14,9 +14,13 @@ export default function LogoHeader() {
       />
       <div className="absolute left-0 top-0">
         <h1 className="font-dot text-5xl font-bold">
-          <UnderLine>&nbsp;平成</UnderLine>
-          <UnderLine className="text-blue-400">&nbsp;よこしま</UnderLine>
-          <UnderLine>&nbsp;会議</UnderLine>
+          <UnderLine>
+            &nbsp;平成
+            <br />
+            <span className="text-blue-400">&nbsp;よこしま</span>
+            <br />
+            &nbsp;会議
+          </UnderLine>
         </h1>
       </div>
     </div>
