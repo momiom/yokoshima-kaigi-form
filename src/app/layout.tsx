@@ -1,3 +1,4 @@
+import GoogleAnalytics from '@/components/GoogleAnalytics'
 import LogoHeader from '@/components/LogoHeader'
 import '@/styles/globals.css'
 
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body
         className={`font-sans ${inter.variable} ${dot.variable} flex flex-col items-center bg-[url(/images/bg.png)] bg-repeat`}
       >
+        <GoogleAnalytics />
         <LogoHeader />
         <div className="px-4">{children}</div>
       </body>
