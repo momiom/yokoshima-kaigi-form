@@ -12,23 +12,17 @@ export async function postMessageAction(data: MessageFormInput) {
   const notion = new Client({ auth: process.env.NOTION_API_KEY })
   const requestData = makeNotionRequestData(data)
 
-  let success = false
   try {
     const response = await notion.pages.create(requestData)
     console.log('posted:', response)
-    gtag.serverSideEvent({ action: 'post_message_success', eventValues: { response } })
-    success = true
+    gtag.serverSideEvent({ action: 'post_message_success', eventValues: { requestData, response } })
   } catch (error) {
     console.error('error:', error)
+    gtag.serverSideEvent({ action: 'post_message_failure', eventValues: { requestData, error } })
     gtag.serverSideException({ message: JSON.stringify(error), isFatal: false })
-    success = false
   }
 
-  if (success) {
-    redirect('/form/success')
-  } else {
-    redirect('/form/failure')
-  }
+  redirect('/form/success')
 }
 
 function makeNotionRequestData(data: MessageFormInput): CreatePageParameters {
