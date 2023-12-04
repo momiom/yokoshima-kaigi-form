@@ -30,7 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       >
         <GoogleAnalytics />
         <LogoHeader />
-        <div className="mt-4 px-5">{children}</div>
+        <div className="mb-28 mt-4 max-w-3xl px-5">{children}</div>
       </body>
     </html>
   )

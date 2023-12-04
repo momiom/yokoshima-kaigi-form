@@ -7,5 +7,5 @@ export default function H1({
   children: React.ReactNode
   className?: string
 }) {
-  return <h1 className={cn('mb-6 font-dot text-3xl font-bold', className)}>{children}</h1>
+  return <h1 className={cn('mb-5 font-dot text-3xl font-bold', className)}>{children}</h1>
 }
