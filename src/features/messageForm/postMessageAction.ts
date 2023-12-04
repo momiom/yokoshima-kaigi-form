@@ -55,6 +55,24 @@ function makeNotionRequestData(data: MessageFormInput): CreatePageParameters {
           },
         ],
       },
+      おたより本文: {
+        rich_text: [
+          {
+            text: {
+              content: data.message ?? '',
+            },
+          },
+        ],
+      },
+      非公開メッセージ: {
+        rich_text: [
+          {
+            text: {
+              content: data.privateMessage ?? '',
+            },
+          },
+        ],
+      },
     },
     children: [
       {
@@ -101,6 +119,22 @@ function makeNotionRequestData(data: MessageFormInput): CreatePageParameters {
             {
               text: {
                 content: data.privateMessage ?? '',
+              },
+            },
+          ],
+          color: 'default',
+        },
+      },
+      {
+        object: 'block',
+        paragraph: {
+          rich_text: [
+            {
+              type: 'mention',
+              mention: {
+                user: {
+                  id: '6bea1933-5a8e-4601-8cd2-67f75f3d4345',
+                },
               },
             },
           ],
