@@ -16,11 +16,35 @@ const dot = localFont({
   display: 'block',
 })
 
+const siteName = '平成よこしま会議 公式サイト'
+const description =
+  '平成よこしま会議の公式サイトです。おたよりはこのサイトから。この番組は、平成生まれの男女、れいかとかずきが日常のあれこれを、若干よこしまな気持ちで議論するトークプログラムです。'
+const url = 'https://heisei-yokoshima-kaigi.vercel.app'
+
 export const metadata = {
-  title: '平成よこしま会議 公式サイト',
-  description:
-    '平成よこしま会議の公式サイトです。おたよりはこのサイトから。この番組は、平成生まれの男女、れいかとかずきが日常のあれこれを、若干よこしまな気持ちで議論するトークプログラムです。',
-  icons: [{ rel: 'icon', url: '/favicon.ico' }],
+  title: {
+    default: siteName,
+    template: `%s | ${siteName}`,
+  },
+  description,
+  openGraph: {
+    title: siteName,
+    description,
+    url,
+    siteName,
+    locale: 'ja_JP',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteName,
+    description,
+    site: '@yokoshimakaigi',
+    creator: '@yokoshimakaigi',
+  },
+  alternates: {
+    canonical: url,
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
