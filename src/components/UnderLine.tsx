@@ -10,7 +10,7 @@ export default function UnderLine({
   return (
     <span
       className={cn(
-        `decoration-skip-ink-none leading-[1.2] underline decoration-yellow-200 decoration-[0.5em] underline-offset-[-0.2em]`,
+        `skip-ink-none leading-[1.2] underline decoration-yellow-200 decoration-[0.5em] underline-offset-[-0.2em]`,
         className,
       )}
     >

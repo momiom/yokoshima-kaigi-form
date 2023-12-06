@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .content-auto {
+    content-visibility: auto;
+  }
+
+  .skip-ink-none {
+    text-decoration-skip-ink: none;
+  }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -64,6 +74,10 @@
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
   }
+
+  a {
+    @apply skip-ink-none text-foreground underline underline-offset-4;
+  }
 }
 
 @layer base {
@@ -72,11 +86,5 @@
   }
   body {
     @apply bg-background text-foreground;
-  }
-}
-
-@layer utilities {
-  .decoration-skip-ink-none {
-    text-decoration-skip-ink: none;
   }
 }
